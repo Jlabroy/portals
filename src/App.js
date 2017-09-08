@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
-import History from "./components/History";
-import Home from "./components/Home";
-import Numbers from "./components/Numbers";
-import Recordings from "./components/Recordings";
-import Settings from "./components/Settings";
+import Dashboard from "./containers/Dashboard";
+import History from "./containers/History";
+import Home from "./containers/Home";
+import Numbers from "./containers/Numbers";
+import Recordings from "./containers/Recordings";
+import Settings from "./containers/Settings";
+import Theme from "./theme";
 
 const App = () => (
     <Router>
         <div>
+            {Theme.COMPANY_NAME}
             <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/dashboard">Dashboard</Link></li>
@@ -18,7 +20,7 @@ const App = () => (
                 <li><Link to="/recordings">Recordings</Link></li>
                 <li><Link to="/settings">Settings</Link></li>
             </ul>
-            <hr/>
+            <hr />
             <Route exact path="/" component={Home}/>
             <Route path="/dashboard" component={Dashboard}/>
             <Route path="/history" component={History}/>
